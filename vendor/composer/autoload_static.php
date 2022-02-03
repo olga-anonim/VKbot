@@ -22,7 +22,6 @@ class ComposerStaticInitd5e504e2a3d01d815b64a06eb8fbee24
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Owner\\VKbot\\EventsHandler' => __DIR__ . '/../..' . '/src/EventsHandler.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
