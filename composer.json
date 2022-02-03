@@ -1,0 +1,10 @@
+{
+    "name": "owner/v-kbot",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Owner\\VKbot\\": "src/"
+        }
+    },
+    "require": {}
+}
