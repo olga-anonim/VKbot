@@ -1,8 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$to = "teplovaov@mail.ru";
-$from = "olga-anonim@mail.ru ";
+$to = "?????";  //куда
 
 if (isset($_GET['complain'])) {
     $city = $_GET['city'];
@@ -17,16 +16,21 @@ if (isset($_GET['complain'])) {
     $name = htmlspecialchars($name);
     $name = urldecode($name);
     $name = trim($name);
+    $email = $_GET['e-mail'];
+    $email = htmlspecialchars($email);
+    $email = urldecode($email);
+    $email = trim($email);
+
     $text = $_GET['text'];
-    $text  = htmlspecialchars($text );
-    $text  = urldecode($text );
-    $text  = trim($text );
+    $text = htmlspecialchars($text);
+    $text = urldecode($text);
+    $text = trim($text);
 
-    $data = $city . " ".$adress . " ". $name;
+    $data = $city . " " . $adress . " " . $name . " " . $email;
     if (isset ($_FILES['file']))
-        $data = $data.$_FILES['file'];
+        $data = $data . $_FILES['file'];
 
-    if (mail($to, "complain", $data, "http://localhost:8001 \r\n")) {
+    if (mail($to, "complain", $data, $email)) {
         echo "сообщение успешно отправлено";
     } else {
         echo "при отправке сообщения возникли ошибки";
